@@ -1,1 +1,66 @@
+1)
+#include <stdio.h>
 
+int main() {
+    int n;
+    scanf("%d", &n);
+
+    switch (n) {
+        case 3: printf("Triangle"); break;
+        case 4: printf("Quadrilateral"); break;
+        case 5: printf("Pentagon"); break;
+        case 6: printf("Hexagon"); break;
+        case 7: printf("Heptagon"); break;
+        case 8: printf("Octagon"); break;
+        case 9: printf("Nonagon"); break;
+        case 10: printf("Decagon"); break;
+        default: printf("The number of sides is not supported."); break;
+    }
+
+    return 0;
+}
+2)
+#include <stdio.h>
+
+int main() {
+    int y;
+    scanf("%d", &y);
+
+    int i = (y % 12 + 12) % 12;
+
+    switch (i) {
+        case 0: printf("Monkey"); break;
+        case 1: printf("Rooster"); break;
+        case 2: printf("Dog"); break;
+        case 3: printf("Pig"); break;
+        case 4: printf("Rat"); break;
+        case 5: printf("Ox"); break;
+        case 6: printf("Tiger"); break;
+        case 7: printf("Hare"); break;
+        case 8: printf("Dragon"); break;
+        case 9: printf("Snake"); break;
+        case 10: printf("Horse"); break;
+        case 11: printf("Sheep"); break;
+    }
+
+    return 0;
+}
+3)
+#include <stdio.h>
+
+int main() {
+    char t[3];
+    scanf("%c%c", &t[0], &t[1]);
+
+    int x, y;
+    x = (int)t[0] - 97;
+    y = (int)t[1] - 49;
+
+    if ((x + y) % 2 == 0) {
+        printf("The square is black.");
+    } else {
+        printf("The square is white.");
+    }
+
+    return 0;
+}

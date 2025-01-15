@@ -1,1 +1,54 @@
+1)
+#include <stdio.h>
+
+int main() {
+    int feet, inch, i;
+    float tot;
+
+    scanf("%d %d", &feet, &inch);
+    i = feet * 12 + inch;
+    tot = i * 2.54;
+
+    printf("%.2f", tot);
+
+    return 0;
+}
+2)
+#include <stdio.h>
+
+int main() {
+    int a, b;
+
+    scanf("%d %d", &a, &b);
+
+    printf("%d\n", a + b);
+    printf("%d\n", a - b);
+    printf("%d\n", a * b);
+    printf("%d\n", a / b);
+    printf("%d\n", a % b);
+
+    return 0;
+}
+3)
+#include <stdio.h>
+
+int main() {
+    int n;
+    float t, r, d;
+
+    scanf("%d", &n);
+
+    const float regular = 3.49;
+    const float discount = 0.6;
+
+    r = n * regular;
+    d = r * discount;
+    t = r - d;
+
+    printf("Regular price: %.2f\n", r);
+    printf("Discount: %.2f\n", d);
+    printf("Total: %.2f\n", t);
+
+    return 0;
+}
 

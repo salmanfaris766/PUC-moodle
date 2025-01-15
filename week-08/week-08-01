@@ -1,1 +1,111 @@
+1)
+#include <stdio.h>
+
+int main() {
+    int t;
+    scanf("%d", &t);
+    while (t--) {
+        int n, m, d, min, temp;
+        scanf("%d %d %d", &n, &m, &d);
+
+        int arr[n];
+        for (int i = 0; i < n; i++) {
+            scanf("%d", &arr[i]);
+        }
+
+        for (int j = 0; j < n; j++) {
+            min = j;
+            for (int k = j + 1; k < n; k++) {
+                if (arr[k] < arr[min]) {
+                    min = k;
+                }
+            }
+            temp = arr[min];
+            arr[min] = arr[j];
+            arr[j] = temp;
+        }
+
+        int maxsum = 0, minsum = 0;
+
+        for (int a = 0; a < d; a++) {
+            minsum += arr[a];
+        }
+
+        for (int b = n - 1; b > m - 1; b--) {
+            maxsum += arr[b];
+        }
+
+        printf("%d\n", maxsum - minsum);
+    }
+
+    return 0;
+}
+2)
+#include <stdio.h>
+
+int main() {
+    int n, min1, min2, temp, flag = 1;
+    scanf("%d", &n);
+    int vac[n], pat[n];
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &vac[i]);
+    }
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &pat[i]);
+    }
+
+    for (int j = 0; j < n - 1; j++) {
+        min1 = j;
+        min2 = j;
+        for (int k = j; k < n; k++) {
+            if (vac[k] < vac[min1]) {
+                min1 = k;
+            }
+            if (pat[k] < pat[min2]) {
+                min2 = k;
+            }
+        }
+        temp = vac[min1];
+        vac[min1] = vac[j];
+        vac[j] = temp;
+
+        temp = pat[min2];
+        pat[min2] = pat[j];
+        pat[j] = temp;
+    }
+
+    for (int i = 0; i < n; i++) {
+        if (vac[i] <= pat[i]) {
+            flag = 0;
+            break;
+        }
+    }
+
+    printf("%d", flag);
+    return 0;
+}
+3)
+#include <stdio.h>
+
+int main() {
+    int n, count = 0;
+    scanf("%d", &n);
+
+    int arr[n];
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = i + 1; j < n; j++) {
+            if ((arr[i] ^ arr[j]) == 0) {
+                count++;
+            }
+        }
+    }
+
+    printf("%d", count);
+
+    return 0;
+}
 

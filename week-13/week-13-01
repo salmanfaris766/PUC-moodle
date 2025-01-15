@@ -1,1 +1,58 @@
+1)
+int balancedSum(int arr_count, int* arr) {
+    int left = 0, right = 0;
 
+    for (int i = 0; i < arr_count; i++) {
+        right += arr[i];
+    }
+
+    for (int i = 0; i < arr_count; i++) {
+        if (left == (right - arr[i])) {
+            return i;
+        }
+        left += arr[i];
+        right -= arr[i];
+    }
+
+    return -1; 
+}
+2)
+int arraySum(int numbers_count, int *numbers) {
+    int sum = 0;
+
+    for (int i = 0; i < numbers_count; i++) {
+        sum += numbers[i];
+    }
+
+    return sum;
+}
+3)
+#include <stdio.h>
+#include <stdlib.h>
+
+int compare(const void* a, const void* b) {
+    return (*(int*)a - *(int*)b);
+}
+
+int minDiff(int arr_count, int* arr) {
+    qsort(arr, arr_count, sizeof(int), compare);
+
+    int sum_diff = 0;
+
+    for (int i = 1; i < arr_count; i++) {
+        sum_diff += arr[i] - arr[i - 1];
+    }
+
+    return sum_diff;
+}
+
+int main() {
+    int arr_count = 5;
+    int arr[] = {1, 5, 3, 2, 8};
+
+    int min_diff = minDiff(arr_count, arr);
+
+    printf("Minimum difference sum: %d\n", min_diff);
+
+    return 0;
+}

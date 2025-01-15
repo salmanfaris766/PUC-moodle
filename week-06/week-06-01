@@ -1,1 +1,87 @@
+1)
+#include <stdio.h>
 
+int main() {
+    int t;
+    scanf("%d", &t);
+
+    while (t--) {
+        int n;
+        scanf("%d", &n);
+        int a[n];
+
+        for (int i = 0; i < n; i++) {
+            scanf("%d", &a[i]);
+        }
+
+        int k;
+        scanf("%d", &k);
+        int flag = 0;
+
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if (a[i] - a[j] == k || a[j] - a[i] == k) {
+                    flag = 1;
+                    break;
+                }
+            }
+            if (flag) break;
+        }
+
+        printf("%d\n", flag);
+    }
+
+    return 0;
+}
+2)
+#include <stdio.h>
+
+int main() {
+    int t;
+    scanf("%d", &t);
+
+    while (t--) {
+        int n, c = 0;
+        scanf("%d", &n);
+
+        for (int i = 1; i <= n; i++) {
+            if (i % 2 == 0) {
+                c = c + i;
+            }
+        }
+        printf("%d\n", c);
+    }
+
+    return 0;
+}
+3)
+#include <stdio.h>
+
+int main() {
+    int s1, s2, ans;
+    scanf("%d", &s1);
+
+    int ta[s1];
+    for (int i = 0; i < s1; i++) {
+        scanf("%d", &ta[i]);
+    }
+
+    scanf("%d", &s2);
+    int tb[s2];
+
+    for (int i = 0; i < s2; i++) {
+        scanf("%d", &tb[i]);
+    }
+
+    for (int j = 0; j < s2; j++) {
+        ans = 0;
+        for (int i = 0; i < s1; i++) {
+            if (tb[j] >= ta[i]) {
+                ans++;
+            }
+        }
+        printf("%d\n", ans);
+    }
+
+    return 0;
+}

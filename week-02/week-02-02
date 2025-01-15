@@ -1,1 +1,54 @@
+1)
+#include <stdio.h>
 
+int main() {
+    int X, Y;
+
+    scanf("%d\n", &X);
+    scanf("%d", &Y);
+
+    if (Y >= X) {
+        printf("YES");
+    } else {
+        printf("NO");
+    }
+
+    return 0;
+}
+2)
+#include <stdio.h>
+
+int main() {
+    int N, tot;
+
+    scanf("%d", &N);
+
+    if (N >= 1) {
+        tot = (N * (N - 1)) / 2;
+        printf("%d", tot);
+    }
+
+    return 0;
+}
+3)
+#include <stdio.h>
+
+int main() {
+    int a, b, c;
+
+    scanf("%d %d %d", &a, &b, &c);
+
+    if (a > b) {
+        if (a > c) {
+            printf("%d", a);
+        } else {
+            printf("%d", c);
+        }
+    } else if (b > c) {
+        printf("%d", b);
+    } else {
+        printf("%d", c);
+    }
+
+    return 0;
+}
